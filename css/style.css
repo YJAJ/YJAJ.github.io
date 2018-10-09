@@ -5,6 +5,8 @@ Author: YJ Park
 Tags: YoonjinPark, YJ Park, Website
 */
 
+@import "{{ site.jekyll-theme-hacker }}";
+
 @font-face {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   src: url(../fonts/Lucida.ttf);
