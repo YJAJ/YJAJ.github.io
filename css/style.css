@@ -75,7 +75,7 @@ color: #fff;
   left:200px;
   top: 200px;
   height: 25%;
-  width: 25%;
+  width: 75%;
   padding-top: 10px;
   padding-right: 30px;
   padding-bottom: 60px;
@@ -116,7 +116,9 @@ body {
   }
 
   a {
-
+    width:42px;
+    height:42px;
+    border:10
   }
 
 	/*****Header Style*****/
