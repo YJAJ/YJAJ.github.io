@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Assignment side-project or paper-reading blogs
 email: yoonjin.park@hotmail.com
-description: >- # My blogs are to document my learning journey. 
+description: >- # My blogs are to document my learning journey in programming, machine learning and deep learning. 
  They are mainly about assignments undertaken during trimesters as well as 
  side-projects done or my understanding of papers read in my personal time.
 baseurl: "" # the subpath of your site, e.g. /blog
