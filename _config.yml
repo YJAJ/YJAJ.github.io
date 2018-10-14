@@ -16,8 +16,8 @@
 title: Assignment side-project or paper-reading blogs
 email: yoonjin.park@hotmail.com
 description: >- # My blogs are to document my learning journey. 
-They are mainly about assignments undertaken during trimesters as well as 
-side-projects done or my understanding of papers read in my personal time.
+ They are mainly about assignments undertaken during trimesters as well as 
+ side-projects done or my understanding of papers read in my personal time.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yjpark.me" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: YJAJ
@@ -29,6 +29,7 @@ markdown: kramdown
 theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag  
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
