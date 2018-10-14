@@ -17,9 +17,10 @@ title: Assignment side-project or paper-reading blogs
 email: yoonjin.park@hotmail.com
 description: >- # My blogs are to document my learning journey in programming, machine learning and deep learning. 
  They are mainly about assignments undertaken during trimesters as well as 
- side-projects done or my understanding of papers read in my personal time.
+ side-projects or my understanding of papers.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yjpark.me" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://yjpark.me"
+author: YJ Park
 github_username: YJAJ
 bitbucket_username: YJAJ
 linkedin_username: yoon-jin-park-a466b912
