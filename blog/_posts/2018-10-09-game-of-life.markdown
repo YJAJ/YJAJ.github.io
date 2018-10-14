@@ -23,6 +23,7 @@ Conway's Game of Life ([Wikipedia Conway's Game of Life](https://en.wikipedia.or
 With these rules, cells will live or die over generation. For example, this Pulsar evolution is quite pretty. 
 
 ![Wikipedia Game of Life pulsar](https://upload.wikimedia.org/wikipedia/commons/0/07/Game_of_life_pulsar.gif)
+
 source: https://upload.wikimedia.org/wikipedia/commons/0/07/Game_of_life_pulsar.gif
 
 As I had no idea around GUI for Java, I had to read many posts from Stack Overflow implementing different ways of Game of Life. The important part here was that user input of mouse click should be the initialisation of the first generation. After reading around some posts, I decided to divide the implementation into three four different classes. They are
