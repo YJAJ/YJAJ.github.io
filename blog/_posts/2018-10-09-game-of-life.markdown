@@ -4,6 +4,7 @@ author: YJ Park
 title:  "Conway's Game of Life (assignment with Java)"
 date:   2018-10-09 20:01:59 +1000
 categories: jekyll update
+tags: Conway's Game of Life, Game of Life, Java
 ---
 This assignment was the fourth project of 1801ICT (Programming languages). The requirements included that
 * A project should be written in Java;
@@ -187,5 +188,8 @@ In addition, through createOriginalGeneration(), a copy of the state is then pas
     }
 {% endhighlight %}
 
-That's it!
+That's it! Here is the example of Game Of Life.
+<video width="500" height="500" controls><source src="../../../../../../assets/videos/game_of_life_play.mp4" type="video/mp4"></video>
+
+
 If you would like to try Game of Life, it can be found here ["Conway's Game of Life"](https://bitbucket.org/YJAJ/1801ict_project_4/src/master )
