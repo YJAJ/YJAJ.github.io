@@ -192,4 +192,4 @@ That's it! Here is the example of Game Of Life.
 <video width="500" height="500" controls><source src="../../../../../../assets/videos/game_of_life_play.mp4" type="video/mp4"></video>
 
 
-If you would like to try Game of Life, it can be found here ["Conway's Game of Life"](https://bitbucket.org/YJAJ/1801ict_project_4/src/master )
+If you would like to try Game of Life, it can be found here ["Conway's Game of Life"](https://bitbucket.org/YJAJ/1801ict_project_4/src/master)
