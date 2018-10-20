@@ -6,6 +6,9 @@ date:   2018-10-09 20:01:59 +1000
 categories: jekyll update
 tags: Conway's Game of Life, Game of Life, Java
 ---
+
+## Introduction
+
 This assignment was the fourth project of 1801ICT (Programming languages). The requirements included that
 * A project should be written in Java;
 * Inheritance and polymorphism should be incorporated in a project; and
@@ -14,6 +17,8 @@ This assignment was the fourth project of 1801ICT (Programming languages). The r
 I was looking around examples of small projects that I could try in a time limit of four or five days (because I was preparing for Viva Voce for my PhD).
 This list on quora named ["Pro/g/ramming Challenges v1.4e"](https://www.quora.com/What-are-some-small-projects-I-could-do-using-Java) helped me to search for an interesting project.
 I was tempted by Minesweeper, however, decided to try Conway's Game of Life since the assignment from my other course also uses a theme of "evolution through generations" (i.e. Genetic Algorithm).
+
+## What is Conway's Game of Life?
 
 Conway's Game of Life ([Wikipedia Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)) describes the origin and simple rules of the implementation. It is noted that the Game of Life is a cellular finite automaton developed by John Horton Conway in 1970. It has four simple rules as follows:
 * Any live cell with two or three live neighbours lives on to the next generation.
@@ -26,6 +31,8 @@ With these rules, cells will live or die over generation. For example, this Puls
 ![Wikipedia Game of Life pulsar](https://upload.wikimedia.org/wikipedia/commons/0/07/Game_of_life_pulsar.gif)
 
 source: https://upload.wikimedia.org/wikipedia/commons/0/07/Game_of_life_pulsar.gif
+
+## Conway's Game of Life step by step
 
 As I had no idea around GUI for Java, I had to read many posts from Stack Overflow implementing different ways of Game of Life. The important part here was that user input of mouse click should be the initialisation of the first generation. After reading around some posts, I decided to divide the implementation into three four different classes. They are
 * Cell class that has the information about x coordinate, y coordinate, and the state of alive or dead with associated getter and setter methods;
@@ -191,5 +198,10 @@ In addition, through createOriginalGeneration(), a copy of the state is then pas
 That's it! Here is the example of Game Of Life.
 <video width="500" height="500" controls><source src="../../../../../../assets/videos/game_of_life_play.mp4" type="video/mp4"></video>
 
+## Lessons learnt
+
+From doing this assignment, I learnt that it is quite difficult to keep view, controller and model separately. Overall, the code is quite messy 
+because model and controller (Action Listener) are mixed in ConwayGameOfLife class. Before diving into coding at the beginning, I would better think about
+how I would design classes and its members.
 
 If you would like to try Game of Life, it can be found here ["Conway's Game of Life"](https://bitbucket.org/YJAJ/1801ict_project_4/src/master)
