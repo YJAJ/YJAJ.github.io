@@ -115,8 +115,9 @@ Though ReLU does not require normalisation as long as training samples provides 
 source: the expression on page 4 in the paper and https://image.slidesharecdn.com/alexnet1-180319134337/95/alexnetimagenet-classification-with-deep-convolutional-neural-networks-11-638.jpg?cb=1521467270
 
 Honestly, I read this expression three times and still don't get it fully. 
+**Update:** Let us assume we have 6 filters and these filters all look at the position x (height) and the position y (width) of the input. Our goal is to normalise the particular value at this position with the 2nd (i-th) filter. To do so, we will divide this particular value by the sum of the squared values from its adjacent filters. In this example, if we assume n as 6 (n is a hyperparameter representing adjacent filters) and N as 5, *j* would be between 0 (max(0, 2-6/2)) and 4 (min(4, 2+6/2)). This means the value at the position x and y at the 2nd filter would be divided by the sum of the squared values at the same position between 0-th and 4-th filters.
 
-- [ ] This has been added to To-come-back-to-understand-it-further list.
+- [x] This has been added to To-come-back-to-understand-it-further list.
 
 ### 3. Overlapping pooling
 Traditionally, stride and the height/width of a pooling unit was same, for example, stride was 2 and the pooling unit has the size of  2 x 2. However, in this paper, authors used overlapping pooling by adopting stride lesser than the height/width of a pooling unit, which helped the reduction of Top-5 error rate ~0.3 %.
