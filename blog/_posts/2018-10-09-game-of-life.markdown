@@ -7,8 +7,6 @@ categories: jekyll update
 tags: Conway's Game of Life, Game of Life, Java
 ---
 
-## Introduction
-
 This assignment was the fourth project of 1801ICT (Programming languages). The requirements included that
 * A project should be written in Java;
 * Inheritance and polymorphism should be incorporated in a project; and

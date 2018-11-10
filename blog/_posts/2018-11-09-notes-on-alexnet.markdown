@@ -9,12 +9,12 @@ tags: AlexNet, Krizhevsky et al., 2012, Krizhevsky 2012, Alex Krizhevsky, Ilya S
 
 This blog is mainly based on the paper ["ImageNet Classification with Deep Convolutional Neural Networks"](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf), in addition to the information obtained from [fast.ai](https://www.fast.ai/) and [Standford CS231N](http://cs231n.stanford.edu/2017/).
 
-According to Serena Yeung (PhD at Stanford University, Co-lecturer of CS231N Convolutional Neural Networks for Visual Recognition) in her [Lecture 5 (4:28 min)](https://www.youtube.com/watch?v=bNb2fEVKeEo&index=5&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv), AlexNet in 2012 was the one of the deep learning architecture that sparked the whole use of convolutional neural networks more widely. AlexNet remarkably improved the top 1 and top 5 error rate on ImageNet Large-Scale Visual Recognition Challenge (ILSVRC) in 2010 and 2012 than the previous state-of-the art results. 
+According to Serena Yeung (PhD at Stanford University, Co-lecturer of CS231N Convolutional Neural Networks for Visual Recognition) in her [Lecture 5 (4:28 min)](https://www.youtube.com/watch?v=bNb2fEVKeEo&index=5&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv), AlexNet in 2012 was the one of the deep learning architecture that sparked the whole use of convolutional neural networks more widely. AlexNet remarkably improved the top 1 and top 5 error rate on ImageNet Large-Scale Visual Recognition Challenge (ILSVRC) on 2010 and 2012 data sets than the previous state-of-the art results. 
 
 ## What is ImageNet Large-Scale Visual Recognition Challenge (ILSVRC)?
 [ImageNet](http://image-net.org/) holds approximately 22,000 categories of 15 million images for visual object recognition research. With huge time and efforts invested in the project, ImageNet photos tend to be clean and training set images are labeled clearly for users.
 
-The Challenge/Competition based on a set from this database is held every year since 2010. The purpose of the Challenge is to "evaluate algorithms for object detection and image classification at large scale." Each ILSVRC is given with around 1,000 images per each category and 1,000 categories in a training set, 50,000 images in a validation set, and 150,000 images in a test set.
+The Challenge/Competition is based on a particular set from this database and is held every year since 2010. The purpose of the Challenge is to "evaluate algorithms for object detection and image classification at large scale." Each ILSVRC is given with around 1,000 images per each category and 1,000 categories in a training set, 50,000 images in a validation set, and 150,000 images in a test set.
 For more information, the details are outlined on this [place](http://image-net.org/challenges/LSVRC/).
 
 ## Main characters of AlexNet
@@ -74,12 +74,12 @@ For more information, the details are outlined on this [place](http://image-net.
 ---
 
 ## What is convolutional neural networks (CNN) and why does this CNN matter? 
-CNN uses a filter/kernel (for example, 3x3 image filter) to the input (e.g. image), passing the result to the next layer. The visualisation of the image filter/kernel is demonstrated well on this [webpage](http://setosa.io/ev/image-kernels/). To a simpleton like me, CNN seems to be looking at an image through different types of a looking glass so that you can perceive the image from different perspectives to understand its diverse information.
+CNN uses a filter/kernel (for example, 3x3 image filter) to the input (e.g. image), passing the result to the next layer. The visualisation of the image filter/kernel is demonstrated well on this [webpage](http://setosa.io/ev/image-kernels/). To a simpleton like me, CNN seems to be looking at an image through different types of a looking glass so that you can perceive the image from different perspectives to take in its diverse information.
 
-There are three important numbers in understanding how CNN inputs and filters produce outputs.
+There are three important numbers to see how CNN inputs and filters produce outputs.
 1. input size: input size is usually height x width x RGB channels (e.g. 227 x 227 x 3).
 2. filter size: filter size is based on the number of filters x height x width (e.g. 96 x 11 x 11).
-3. stride: stride is how far does the filter get moved each time. So the stride of 2 means it moves two steps to the right side.
+3. stride: stride is how far the filter gets moved each time. Stride of 2 means it moves two steps to the right side.
 
 Example of input and filter: The example below shows input size of 5 x 5 and filter size of 2 x 2 with stride of 1.
 
@@ -92,7 +92,7 @@ To learn information from millions of images in thousands of categories, an arch
 However, CNN was expensive to apply in large scale to high resolution images. Thanks to (relatively) modern GPUs (then, authors used two GTX580 3GB to train the data set between five to six days) and a highly optimised implementation of 2d convolutional layers (hereafter, conv layers), deep CNN became possible.
 
 ## How was the data processed and prepared?
-Authors highlighted two pre-processing. First, they downsampled the images to a fixed resolution of 256x256. Also, they subtracted the man activity over the training set from each pixel.
+Authors highlighted two pre-processing. First, they downsampled the images to a fixed resolution of 256 x 256. Also, they subtracted the mean activity over the training set from each pixel.
 
 ## What are novel features of the architecture (i.e. AlexNet)?
 
@@ -119,7 +119,7 @@ Honestly, I read this expression three times and still don't get it fully.
 - [ ] This has been added to To-come-back-to-understand-it-further list.
 
 ### 3. Overlapping pooling
-Traditionally, stride and the height/width of a pooling unit was same, for example, stride was 2 and the pooling unit has the size of 2x2. However, in this paper, authors used overlapping pooling by adopting stride lesser than the height/width of a pooling unit, which helped the reduction of Top-5 error rate ~0.3 %.
+Traditionally, stride and the height/width of a pooling unit was same, for example, stride was 2 and the pooling unit has the size of  2 x 2. However, in this paper, authors used overlapping pooling by adopting stride lesser than the height/width of a pooling unit, which helped the reduction of Top-5 error rate ~0.3 %.
 
 ### 4. Overall architecture
 ---
@@ -151,7 +151,7 @@ source: http://cs231n.github.io/assets/cnn/maxpool.jpeg
 
 Overall, the size of output through filters, for example 96 different filters using the previous filter example, would be:
 
-> size of output through filters = size of image/input through filters * size of image/input through filters * the number of filters
+> size of output through filters = the number of filters * size of image/input through filters * size of image/input through filters
 
 Therefore, the final output size will be: 96 x 2 x 2
 
@@ -219,13 +219,13 @@ The model was trained with stochastic gradient descent with momentum of 0.9, wei
 
 source: https://i.stack.imgur.com/RfFkY.png
 
-My attempt to interpret this expression is that the next weight is based on the current weight and the next moment. The next momentum is updated through 90% of the current momentum value, subtracting 0.05% of learning rate multiplied by the current weight and learning rate multiplied by the average over the current iteration index's batch of the derivative (of the objective) with respect to w, evaluated at the current weight. 
+My attempt to interpret this expression is that the next weight is based on the current weight and the next momentum. This next momentum value is updated through 90% of the current momentum value, subtracting 1) 0.05% of learning rate multiplied by the current weight; and 2) learning rate multiplied by the average over the current iteration index's batch of the derivative (of the objective) with respect to w, evaluated at the current weight. 
 
 I am still trying to understand the last part of this expression. 
 
 - [ ] This has been added to To-come-back-to-understand-it-further list.
 
-Weights were initialised with a zero mean Gaussian distribution and standard deviation of 0.01. Biases (constant 1) were added in the second, fourth, fifth conv layers and the first two fully-connected layers. Learning rate was starting from 0.01 with division by 10 through the training iterations.
+Weights were initialised with a zero mean Gaussian distribution and standard deviation of 0.01. Biases (constant 1) were added in the second, fourth, fifth conv layers and the first two fully-connected layers. Learning rate was starting from 0.01 with a division by 10 through the training iterations.
 
 ## What were the results?
 
@@ -233,7 +233,7 @@ In summary, AlexNet achieved the reduction of Top-1 error rate around 8% and Top
 
 ## Lessons learnt
 
-This was my first attempt to read through and understand the deep learning paper over a few days. AlexNet paper had several concepts that I had to explore further such as a size of layer, an advantage of ReLU over tahn, a visualisation of a conv layer through filters, and the implementation of AlexNet in Pytorch. There were the two math expressions that I had a difficult time to take in, but I decided to come back to them later rather than being stuck behind stumbling blocks.
+This was my first attempt to read through and understand the deep learning paper over a few days. AlexNet paper had several concepts that I had to explore further, such as a size of layer, an advantage of ReLU over tahn, a visualisation of a conv layer through filters, and the implementation of AlexNet in Pytorch. There were the two math expressions that I had a difficult time to take in, but I decided to come back to them later rather than being stuck behind stumbling blocks.
 
 
 
