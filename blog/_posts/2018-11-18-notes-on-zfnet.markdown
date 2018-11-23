@@ -56,7 +56,7 @@ With these three components of deconvnet, the authors were able to visualise all
 
 * First layer filters were changed their size from 11 * 11 to 7 * 7 and its stride became 2 instead of 4.
 * Dense connections were used on layer 3, 4, and 5 from AlexNet because ZFNet was trained on a single GTX580 GPU.
-* After visualising the first layer filters, authors realised that a few of the layer filters dominated so they renormlise each filter in the conv layers where the root mean square value exceeds a fixed radius of 1/10 to the current fixed radius.
+* After visualising the first layer filters, the authors realised that a few of the layer filters dominated so they renormlise each filter in the conv layers where the root mean square value exceeds a fixed radius of 1/10 to the current fixed radius.
 
 ## How does ZFNet look like?
 
@@ -129,7 +129,7 @@ Layer 2 visualised corners and other edge/color conjunctions while Layer 3, 4, a
 
 ### Feature Evolution during Training
 
-Authors found that lower layers converged within a few epochs while upper layers had convergence after a considerable number of epochs. This indicates that recognising an object/class takes a greater time than simple features.
+The authors found that lower layers converged within a few epochs while upper layers had convergence after a considerable number of epochs. This indicates that recognising an object/class takes a greater time than simple features.
 
 ### Feature Invariance
 
@@ -141,11 +141,11 @@ Where an object was occluded, probability of the correct class dropped significa
 
 ## What was the result on ILSVRC-2012?
 
-ZFNet reduced Top-5 error rate on the test set by 0.5%, making it 14.8% (6 convnets) compared to AlexNet's best result 15.3% (7 convnets). Through experiments in changing structures, authors found that adding a middle conv layer gained in performance whilst adding an fc layer made little difference. Adding both layers resulted in over-fitting.
+ZFNet reduced Top-5 error rate on the test set by 0.5%, making it 14.8% (6 convnets) compared to AlexNet's best result 15.3% (7 convnets). Through experiments in changing structures, the authors found that adding a middle conv layer gained in performance whilst adding an fc layer made little difference. Adding both layers resulted in over-fitting.
 
 ## How did it go with other datasets?
 
-Authors also experimented feature generalisation by using pre-trained seven layers on the ImageNet dataset and adding the last softmax layer (i.e. classification layer) individually trained on a relevant data set.
+The authors also experimented feature generalisation by using pre-trained seven layers on the ImageNet dataset and adding the last softmax layer (i.e. classification layer) individually trained on a relevant data set.
 
 ### Caltech-101 and Caltech-256
 
@@ -157,7 +157,7 @@ Pascal 2012 images can have multiple objects in an image while ImageNet datasets
 
 ### Feature Analysis
 
-As it was implied in AlexNet, authors found that deeper feature hierarchies tended to learn more powerful features.
+As it was implied in AlexNet, the authors found that deeper feature hierarchies tended to learn more powerful features.
 
 ## Lessons learnt and future to-do-list
 Through reading the paper, I became more curious about visualising each output - dissecting the structure and looking at what each layer produces would enable better understanding of the current model that I would use for problem solving. I looked around more to identify these techniques and found that there is a plenty of papers out there. For the next task, I would like to focus on this visualisation by reading through [Zeiler et al., 2011](http://www.matthewzeiler.com/wp-content/uploads/2017/07/iccv2011.pdf) and [Selvaraju et al., 2016](https://arxiv.org/abs/1610.02391). In particular, Selvaraju et al., 2016 would be interesting to study further because their approach, Grad-CAM, enables to investigate Resnet-based models.
