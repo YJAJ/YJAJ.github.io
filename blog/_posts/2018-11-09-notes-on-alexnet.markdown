@@ -17,7 +17,7 @@ According to Serena Yeung (PhD at Stanford University, Co-lecturer of CS231N Con
 The Challenge/Competition is based on a particular set from this database and is held every year since 2010. The purpose of the Challenge is to "evaluate algorithms for object detection and image classification at large scale." Each ILSVRC is given with around 1,000 images per each category and 1,000 categories in a training set, 50,000 images in a validation set, and 150,000 images in a test set.
 For more information, the details are outlined on this [place](http://image-net.org/challenges/LSVRC/).
 
-## Main characters of AlexNet
+## Main characteristics of AlexNet
 * Used deep eight layers, composed of 5 convolutional layers and 3 fully-connected layers.
 * Had ~60 million parameters.
 * Reduced Top 5 error rate by ~9% on ILSVRC-2010 test set.
@@ -89,15 +89,15 @@ source: http://adventuresinmachinelearning.com/wp-content/uploads/2017/04/Moving
 
 To learn information from millions of images in thousands of categories, an architecture/model with a large learning capacity is required, generally made up of varying depth and breadth of layers. CNN tends to make mostly correct assumptions about the nature of images and has relatively fewer connections and parameters/weights compared to standard feedforward neural networks. This makes CNN more easier to train on the given data set.
 
-However, CNN was expensive to apply in large scale to high resolution images. Thanks to (relatively) modern GPUs (then, authors used two GTX580 3GB to train the data set between five to six days) and a highly optimised implementation of 2d convolutional layers (hereafter, conv layers), deep CNN became possible.
+However, CNN was expensive to apply in large scale to high resolution images. Thanks to (relatively) modern GPUs (then, the authors used two GTX580 3GB to train the data set between five to six days) and a highly optimised implementation of 2d convolutional layers (hereafter, conv layers), deep CNN became possible.
 
 ## How was the data processed and prepared?
-Authors highlighted two pre-processing. First, they downsampled the images to a fixed resolution of 256 x 256. Also, they subtracted the mean activity over the training set from each pixel.
+The authors highlighted two pre-processing. First, they downsampled the images to a fixed resolution of 256 x 256. Also, they subtracted the mean activity over the training set from each pixel.
 
 ## What are novel features of the architecture (i.e. AlexNet)?
 
 ### 1. Rectified Linear Units (ReLUs)
-The architecture needs an non-linear function, which we call an activation function. In old days, sigmoid, tahn and arctan used to be used widely for an activation function, but in this paper, authors found that ReLU solves the problem of saturation better than traditional activation functions and does not require normalisation, which makes CNN with ReLU learns several times faster than tahn function.
+The architecture needs an non-linear function, which we call an activation function. In old days, sigmoid, tahn and arctan used to be used widely for an activation function, but in this paper, the authors found that ReLU solves the problem of saturation better than traditional activation functions and does not require normalisation, which makes CNN with ReLU learns several times faster than tahn function.
 
 ReLU sounds quite scary, but it is basically max(0, x). Therefore, the graph looks like this:
 
@@ -108,7 +108,7 @@ source: http://cs231n.github.io/assets/nn1/relu.jpeg
 More information about the activation function is in this video [Lecture 6 (4:46 min)](https://www.youtube.com/watch?v=wEoyxE0GP2M&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=6) or you can read through this [blog](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6) as well. They compared different activation functions and identified strengths and weaknesses.
 
 ### 2. Local Response Normalisation
-Though ReLU does not require normalisation as long as training samples provides a positive input, the following expression of local response normalisation helped authors to reduce their top-5 error rate by 1.2%.
+Though ReLU does not require normalisation as long as training samples provides a positive input, the following expression of local response normalisation helped the authors to reduce their top-5 error rate by 1.2%.
 
 ![Local Response Normalisation expression](https://image.slidesharecdn.com/alexnet1-180319134337/95/alexnetimagenet-classification-with-deep-convolutional-neural-networks-11-638.jpg?cb=1521467270)
 
@@ -120,7 +120,7 @@ Honestly, I read this expression three times and still don't get it fully.
 - [x] This has been added to To-come-back-to-understand-it-further list.
 
 ### 3. Overlapping pooling
-Traditionally, stride and the height/width of a pooling unit was same, for example, stride was 2 and the pooling unit has the size of  2 x 2. However, in this paper, authors used overlapping pooling by adopting stride lesser than the height/width of a pooling unit, which helped the reduction of Top-5 error rate ~0.3 %.
+Traditionally, stride and the height/width of a pooling unit was same, for example, stride was 2 and the pooling unit has the size of  2 x 2. However, in this paper, the authors used overlapping pooling by adopting stride lesser than the height/width of a pooling unit, which helped the reduction of Top-5 error rate ~0.3 %.
 
 ### 4. Overall architecture
 ---
@@ -200,19 +200,19 @@ class AlexNet(nn.Module):
 return x
 {% endhighlight %}
 
-## How did authors control overfitting?
+## How did the authors control overfitting?
 
 ### 1. Data augmentation
 
-Authors artificially enlarged the dataset through five image translations and five horizontal reflection (total 10 different augmentation options per image) and merged the predictions made by the network's softmax layer (i.e. the last layer) on the ten patches.
+The authors artificially enlarged the dataset through five image translations and five horizontal reflection (total 10 different augmentation options per image) and merged the predictions made by the network's softmax layer (i.e. the last layer) on the ten patches.
 
-To change intensities of the RGB in training images, authors did Principal Component Analysis (PCA) on the set of RGB pixel values for the training set and added the principal components discovered (with certain proportions) to each RGB image pixel.
+To change intensities of the RGB in training images, the authors did Principal Component Analysis (PCA) on the set of RGB pixel values for the training set and added the principal components discovered (with certain proportions) to each RGB image pixel.
 
 ### 2. Dropout
 
 Dropout sets the output of the applied hidden layer to zero with a desired probability. This is to simulate combining the predictions of many different models efficiently (noise/diversity helps to generalise better to reduce test errors) because training each model takes several days. Dropouts were applied to first two fully-connected layers with the probability 0.5.
 
-## How did authors train the architecture?
+## How did the authors train the architecture?
 
 The model was trained with stochastic gradient descent with momentum of 0.9, weight decay of 0.0005, and batch size of 128 images. These are important hyperparameters because the rule for training the weights of the model is as follow:
 
@@ -230,7 +230,7 @@ Weights were initialised with a zero mean Gaussian distribution and standard dev
 
 ## What were the results?
 
-In summary, AlexNet achieved the reduction of Top-1 error rate around 8% and Top-5 error rate around 9% on ILSVRC-2010. On the 2012 Challenge, authors pre-trained the model on the ImageNet 2011 Fall dataset release and reduced the error rate down to 15.3% (previously 17% on the 2010 test set).
+In summary, AlexNet achieved the reduction of Top-1 error rate around 8% and Top-5 error rate around 9% on ILSVRC-2010. On the 2012 Challenge, the authors pre-trained the model on the ImageNet 2011 Fall dataset release and reduced the error rate down to 15.3% (previously 17% on the 2010 test set).
 
 ## Lessons learnt
 

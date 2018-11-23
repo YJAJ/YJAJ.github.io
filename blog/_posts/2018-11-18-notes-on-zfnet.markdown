@@ -9,14 +9,14 @@ tags: ZFNet, Zeiler and Furgus, 2013, Matthew Zeiler, Rob Furgus, Visualization 
 
 This post focuses on understanding [the paper](https://arxiv.org/abs/1311.2901) "Visualizing and Understanding Convolutional Networks". To explore core concepts presented in the paper, some better explanations have been adopted from [fast.ai](https://www.fast.ai/) and [Standford CS231N](http://cs231n.stanford.edu/2017/).
 
-This paper was interesting because authors 1) placed efforts to visualise convolutional layers (which was a kind of a black box) and 2) used this visualisation to find better hyperparameters of the existing architecture, AlexNet. In the abstract, the motivations were articulated as identifying 'why large Covlutional Network (CNN) work well' and 'how they might be improved', so this paper focuses on the details around 'how' and 'why' through a good range of experiments.
+This paper was interesting because the authors 1) placed efforts to visualise convolutional layers (which was a kind of a black box) and 2) used this visualisation to find better hyperparameters of the existing architecture, AlexNet. In the abstract, the motivations were articulated as identifying 'why large Convolutional Network (CNN) work well' and 'how they might be improved', so this paper focuses on the details around 'how' and 'why' through a good range of experiments.
 
-## Main characters of ZFNet
+## Main characteristics of ZFNet
 As ZFNet (Zeiler Furgus Net) seems to be an enhanced modification of AlexNet through investigation of internal operations and behaviours of the model, many characters were addressed in comparison with AlexNet.
 * Visualisation techniques used as a diagnostic role
 * Ablation study to identify performance contribution from different model layers (e.g. cnn vs fc layer - which contributes more)
 * Sensitivity analysis through occluding portions of an image
-* Improved hyperparameters as a result of futher investigations above
+* Improved hyperparameters as a result of further investigations above
 * Reduced Top 5 error rate to 14.8% with 6 convnets compared to AlexNet (best result 15.3% with 7 convnets) on ILSVRC-2012
 * Transfer learning to datasets other than ImageNet displaying generalisation ability of the model
 
@@ -25,7 +25,7 @@ In the past, first layers tended to be more frequently visualised because output
 
 To do so, this required a careful initialisation and made sure it does not give large invariances. This meant that higher layers with greater invariances were considered extremely complex to be visualised.
 
-## Why was this paper different from previous visualisation techqniues?
+## Why was this paper different from previous visualisation techniques?
 Through [Deconvolutional Network (Zeiler et al., 2011)](http://www.matthewzeiler.com/wp-content/uploads/2017/07/iccv2011.pdf), this paper visualised features to pixels to map feature activities back to the input pixel space for a relevant layer. There are three components to be understood in deconvnet.
 
 ### 1. Unpooling
@@ -36,21 +36,21 @@ Maxpooling is not invertible, but it can be approximated by recording the locati
 
 ### 2. Rectification
 
-Unpooled feature reconstructions (that are always postive) go through ReLU.
+Unpooled feature reconstructions (that are always positive) go through ReLU.
 
 ### 3. Filtering
 
-Conv layer uses defined filters to convolve output from the previous input. This could be simplifed as:
+Conv layer uses defined filters to convolve output from the previous input. This could be simplified as:
 
 > Input @ Filter = Output 
 
 where @ is matrix multiplication.
 
-Therefore, deconvnet used the transposed versions of the same filters on the output from Rectification above (2. Rectification), which was simplifed as:
+Therefore, deconvnet used the transposed versions of the same filters on the output from Rectification above (2. Rectification), which was simplified as:
 
 > Reconstructed Input = Output @ Transposed Filter
 
-With these three components of deconvnet, authors were able to visuallise all layers in AlexNet.
+With these three components of deconvnet, the authors were able to visualise all layers in AlexNet.
 
 ## What were main changes to AlexNet?
 
@@ -137,7 +137,7 @@ Interestingly, small transforms affected lower layers greatly whilst upper layer
 
 ## How did it affect performance when some portions of images are occluded?
 
-Where an object was occluded, probability of the corret class dropped significantly, indicating that the model really focused on the location of the object in an image.
+Where an object was occluded, probability of the correct class dropped significantly, indicating that the model really focused on the location of the object in an image.
 
 ## What was the result on ILSVRC-2012?
 
@@ -153,11 +153,11 @@ The pre-trained model outperformed previous best results while the model trained
 
 ### Pascal 2012
 
-Pascal 2012 images can have multiple objects in an image while ImageNet datasets focus on a single classification per image, indicating images from these two sources are quite different in nature. Potentially because of this, the pre-trained model performed worse than the best results avoailable for Pascal 2012 images.
+Pascal 2012 images can have multiple objects in an image while ImageNet datasets focus on a single classification per image, indicating images from these two sources are quite different in nature. Potentially because of this, the pre-trained model performed worse than the best results available for Pascal 2012 images.
 
 ### Feature Analysis
 
 As it was implied in AlexNet, authors found that deeper feature hierarchies tended to learn more powerful features.
 
 ## Lessons learnt and future to-do-list
-Through reading the paper, I became more curious about visualising each output - disecting the structure and looking at what each layer produces would enable better understanding of the current model that I would use for problem solving. I looked around more to identify these techniques and found that there is a plenty of papers out there. For the next task, I would like to focus on this visualisation by reading through [Zeiler et al., 2011](http://www.matthewzeiler.com/wp-content/uploads/2017/07/iccv2011.pdf) and [Selvaraju et al., 2016](https://arxiv.org/abs/1610.02391). In particular, Selvaraju et al., 2016 would be interesting to study further because their approach, Grad-CAM, enables to investigate Resnet-based models.
+Through reading the paper, I became more curious about visualising each output - dissecting the structure and looking at what each layer produces would enable better understanding of the current model that I would use for problem solving. I looked around more to identify these techniques and found that there is a plenty of papers out there. For the next task, I would like to focus on this visualisation by reading through [Zeiler et al., 2011](http://www.matthewzeiler.com/wp-content/uploads/2017/07/iccv2011.pdf) and [Selvaraju et al., 2016](https://arxiv.org/abs/1610.02391). In particular, Selvaraju et al., 2016 would be interesting to study further because their approach, Grad-CAM, enables to investigate Resnet-based models.
