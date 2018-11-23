@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Assignment side-project or paper-reading blogs
+title: Assignment, side-project or paper-reading blogs
 email: yoonjin.park@griffithuni.edu.au
 description: >- # My blogs are to document my learning journey in programming, machine learning and deep learning. 
  They are mainly about assignments undertaken during trimesters as well as 
