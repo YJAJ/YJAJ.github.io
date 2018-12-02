@@ -2,7 +2,7 @@
 layout: post
 author: YJ Park
 title:  "Notes on Grad-CAM (Paper title: Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization)"
-date:   2018-12-02 08:00:00 +1000
+date:   2018-12-02 19:35:00 +1000
 categories: jekyll update
 tags: Grad-CAM, Ramprasaath R. Selvaraju, Michael Cogswell, Abhishek Das, Ramakrishna Vedantam, Devi Parikh, Dhruv Batra, Visual Explanations, 2016
 ---
