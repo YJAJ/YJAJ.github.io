@@ -6,6 +6,17 @@ date:   2018-10-09 20:01:59 +1000
 categories: jekyll update
 tags: Conway's Game of Life, Game of Life, Java
 ---
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127453746-1"></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-127453746-1');
+    </script>
+</head>
 
 This assignment was the fourth project of 1801ICT (Programming languages). The requirements included that
 * A project should be written in Java;

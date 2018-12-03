@@ -6,6 +6,18 @@ date:   2018-10-14 13:42:59 +1000
 categories: jekyll update
 tags: Traveling Salesman Problem, TSP, Genetic Algorithm, Python, SQL
 ---
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127453746-1"></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-127453746-1');
+    </script>
+</head>
+
 This assignment, Traveling Salesperson Problem (TSP), consists of the three different parts:
 * Part A: Develop a TSP solver;
 * Part B: Connect to a database; and

@@ -6,6 +6,17 @@ date:   2018-11-09 19:35:00 +1000
 categories: jekyll update
 tags: AlexNet, Krizhevsky et al., 2012, Krizhevsky 2012, Alex Krizhevsky, Ilya Sutskever, Geoffrey E. Hinton
 ---
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127453746-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-127453746-1');
+  </script>
+</head>
 
 This blog is mainly based on the paper ["ImageNet Classification with Deep Convolutional Neural Networks"](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf), in addition to the information obtained from [fast.ai](https://www.fast.ai/) and [Standford CS231N](http://cs231n.stanford.edu/2017/).
 
