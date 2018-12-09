@@ -111,7 +111,33 @@ The full notebook can be found [here](https://github.com/YJAJ/Deep_learning_stud
 
 As you can see from the notebook, heatmap indicates the object of interest within an image.
 
+**Edit: I tried to implement Guided Grad-CAM on Monarch butterfly (Danaus plexippus) based on [this github repo](https://github.com/kazuto1011/grad-cam-pytorch).** 
+
+The original image of an Monarch Butterfly was as follow:
+
+![image of original monarch butterfly](../../../../../../assets/images/657_Danaus plexippus_Lepidoptera_00802633-19d7-46cb-be7a-66822ecdc7b5.jpg)
+
+Image: Original image of an monarch butterfly
+
+Guided Back Propagation provides a texture and general outline of the Monarch Butterfly.
+
+![image of Guided Back Prop on monarch butterfly](../../../../../../assets/images/Danaus plexippus_gbp_resnet152.png)
+
+Image: Guided Back Propagation on the image of an monarch butterfly
+
+Grad-CAM identifies where the model focuses on to classify the image.
+
+![image of Grad-CAM on monarch butterfly](../../../../../../assets/images/Danaus plexippus_gcam_resnet152.png)
+
+Image: Grad-CAM on the image of an monarch butterfly
+
+Because there were no other objects in the image, the image from Guided Grad-CAM appears to be quite similar to the one from Guided Back Propagation, but it does display slightly more details.
+
+![image of Guided Grad-CAM on monarch butterfly](../../../../../../assets/images/Danaus plexippus_ggcam_resnet152.png)
+
+Image: Guided Grad-CAM on the image of an monarch butterfly
+
 ## Lessons learnt and future to-do-list
 Guided Backpropagation and Grad-CAM explains where the model focuses on when labelling. However, Guided Backpropagation is missing localisation while Grad-CAM is missing high-resolution.
 
-During the next week, I would like to implement Guided Grad-CAM to see both localisation and high-resolution of visualised layers.
+During the next week, I would like to implement Guided Grad-CAM to see both localisation and high-resolution of visualised layers - added above.
