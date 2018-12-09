@@ -80,7 +80,7 @@ Grad-CAM (c) focuses on cat for a cat classification but it does not provide any
 
 Guided Grad-CAM (d) displays cat only but it also has a stripe-texture of the cat at the same time.
 
-## How does Grad-CAM look-like?
+## What does Grad-CAM look-like?
 ![expression representing Grad-CAM](../../../../../../assets/expressions/Grad-CAM.png) expresses Grad-CAM where this expression represents "**the class-discriminative localisation map Grad-CAM**" with width _u_ and height _v_ for any class _c_.
 
 There are two steps involved in calculating Grad-CAM.
@@ -140,4 +140,6 @@ Image: Guided Grad-CAM on the image of an monarch butterfly
 ## Lessons learnt and future to-do-list
 Guided Backpropagation and Grad-CAM explains where the model focuses on when labelling. However, Guided Backpropagation is missing localisation while Grad-CAM is missing high-resolution.
 
-During the next week, I would like to implement Guided Grad-CAM to see both localisation and high-resolution of visualised layers - added above.
+During the next week, I would like to implement Guided Grad-CAM to see both localisation and high-resolution of visualised layers.
+
+- [x] Guided Grad-CAM was implemented in Pytorch based on [this github repo](https://github.com/kazuto1011/grad-cam-pytorch).
