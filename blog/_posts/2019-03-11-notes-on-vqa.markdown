@@ -18,7 +18,9 @@ tags: VQA, Kushal Kafle, Christopher Kanan, 2016
 	</script>
 </head>
 
+
 The purpose of this post is to summarise trends in Visual Question Answering (VQA) from [Kafle and Kanan (2016)](https://arxiv.org/abs/1610.01465) as to:
+
  * what datasets are available;
  * what models are used for exploring VQA; and
  * what gaps are arising from adopting available datasets and models.
@@ -42,6 +44,7 @@ There are seven major datasets available for VQA tasks:
 5) Visual7W;
 6) Visual Genome; and
 7) SHAPES.
+
 
 Apart from DAQUAR, all other dataset includes images from COCO dataset that has 328,000 images, 91 common objects categories, with over 2 million labelled instances, and average 5 captions per image.
 
