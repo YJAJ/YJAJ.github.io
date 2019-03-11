@@ -2,7 +2,7 @@
 layout: post
 author: YJ Park
 title:  "Notes on Visual Question Answering (Paper title: Visual Question Answering: Datasets, Algorithms, and Future Challenges)"
-date:   2019-03-11 10:50:00 +1000
+date:   2019-03-11 08:00:00 +1000
 categories: jekyll update
 tags: VQA, Kushal Kafle, Christopher Kanan, 2016
 ---
