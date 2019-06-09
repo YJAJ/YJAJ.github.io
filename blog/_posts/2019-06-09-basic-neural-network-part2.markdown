@@ -91,7 +91,7 @@ def sigmoid(self, x):
 Backpropagation uses a chain rule to step backward and adjusts weights and biases of the current NN layers.
 The example of the chain rule implemented is:
 
-![Example_backprop](../../../../../../assets/images/Example_of_backprop.png)
+![Example_backprop](../../../../../../assets/images/Example_of_backprop.PNG)
 
 When the formula is implemented with codes, it does not look too bad.
 
@@ -114,7 +114,7 @@ def backward(self, x, y, lr):
 
 To apply a chain rule here, the beautiful derivative of a sigmoid function needs to be defined as:
 
-![Derivative_sigmoid](../../../../../../assets/images/Derivative_sigmoid.png)
+![Derivative_sigmoid](../../../../../../assets/images/Derivative_sigmoid.PNG)
 
 {% highlight  Python%}
 #sigmoid derivative
@@ -160,7 +160,7 @@ def kaiming_init(self, bs):
 ### Cost functions of NN class
 There are two loss/cost functions that are implemented: Quadratic and Cross entropy.
 
-![Quad_loss](../../../../../../assets/images/Quadratic_loss.png)
+![Quad_loss](../../../../../../assets/images/Quadratic_loss.PNG)
 
 {% highlight  Python%}
 #quadratic loss function
@@ -171,7 +171,7 @@ def quad_loss(self, y):
 
 Cross entropy loss is implemented as follow:
 
-![Cross_entropy_loss](../../../../../../assets/images/Cross_entropy.png)
+![Cross_entropy_loss](../../../../../../assets/images/Cross_entropy.PNG)
 
 {% highlight  Python%}
 #cross entropy loss
@@ -182,36 +182,36 @@ def cross_entropy_loss(self, x, y):
 ## Results of a small neural network on the MNIST data
 Given all other parameter are equivalent, Kaiming initialisation provides marginally better accuracy. The network with Kaiming initialisation starts at higher accuracy and improves more quickly. However, regardless of different initialisation methods, the gap between the training and test accuracy becomes wider as the number of epochs increases. This may be due to overfitting starting to occur with the training data.
 
-![Result_quad](../../../../../../assets/images/Result_quad.png)
+![Result_quad](../../../../../../assets/images/Result_quad.PNG)
 
-![Result_quad_plot](../../../../../../assets/images/Result_quad_plot.png)
+![Result_quad_plot](../../../../../../assets/images/Result_quad_plot.PNG)
 
 ### Different learning rates
 With a small learning rate (lr) such as 0.001, the learning process is very slow (in particular, for the model with random initialisation) and it still displays underfitting symptoms after 30 epochs for both models. The lr 0.1 improves slower than the performance with the learning rate 3.0 but this learning rate seems to be appropriate (95.18%) as the accuracy reaches to a higher performance compared to the performance of 94.81% with lr = 3.0 for the network with Kaiming initialisation. The lr 1.0 is similarly effective while the lr 10 performs as worse as lr = 0.001.
 
 When lr is 100, the network performance does not improve better than that of the smaller learning rates for both models. 
 
-![lr_table](../../../../../../assets/images/lr_changes_table.png)
+![lr_table](../../../../../../assets/images/lr_changes_table.PNG)
 
 Overall, the learning rate of 0.1 and 1 provides the better accuracy for the model with Kaiming initialisation while the learning rate of 1 and 10 works better for the model with random initialisation.
 
-![lr_table](../../../../../../assets/images/lr_changes_plot.png)
+![lr_table](../../../../../../assets/images/lr_changes_plot.PNG)
 
 Lr of 100 performs terribly because the network cannot perform the gradient descent properly. With the too large learning rate, the model’s convergence cannot be made as it only goes back and forth near the similar points instead of descending towards the optimum.
 
-![Large_learning_rate](../../../../../../assets/images/Large_lr.png)
+![Large_learning_rate](../../../../../../assets/images/Large_lr.PNG)
 
 ### Cross entropy loss function
 The both networks achieve a similar accuracy with the cross-entropy cost function. Despite small improvements in the accuracy for the model with Kaiming initialisation, according to [Nielsen (2018)](http://neuralnetworksanddeeplearning.com/chap3.html) , the cross-entropy cost function can be resilient to the issues associated with the quadratic cost function’s slowdown of learning when using many-layer and multi-neuron network. Hence, using the cross-entropy cost function makes sense when there is a neural network with many layers and nodes.
 
-![Result_cross_entropy](../../../../../../assets/images/Result_cross_entropy.png)
+![Result_cross_entropy](../../../../../../assets/images/Result_cross_entropy.PNG)
 
 ### Combination of different hyper-parameters
 The increased hidden node of 90 provides better accuracy of 97.20% on the test dataset. The accuracy of 97.20% is reached within 30 epochs, thus, the number of epochs over 30 does not make a difference.
 
 Without increasing the number of nodes in a hidden layer, the maximum accuracy is 95.74% with epochs=30, lr=1.0, bs=20, and lr decay with the cross-entropy cost function.
 
-![Result_different_hyper_parameters](../../../../../../assets/images/Result_different hyper-parameters.png)
+![Result_different_hyper_parameters](../../../../../../assets/images/Result_different hyper-parameters.PNG)
 
 Overall, it seems to be important to identify appropriate hyper-parameters for a given data set and a model for a task through experiments. 
 
