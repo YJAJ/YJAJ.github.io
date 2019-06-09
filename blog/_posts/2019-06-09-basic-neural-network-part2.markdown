@@ -64,7 +64,7 @@ The NN class is implemented with:
 ### Forward function of NN class
 As this NN class consists of only one hidden layer and one output layer, a forward function is quite straight forward.
 
-![Forward formula](../../../../../../assets/images/Forward_formula.png)
+![Forward formula](../../../../../../assets/images/Forward_formula.PNG)
 
 {% highlight  Python%}
 #main function - forward implemented with vectorisation
@@ -79,7 +79,7 @@ def forward(self, x):
 
 Activation function in this case is a sigmoid function:
 
-![Sigmoid formula](../../../../../../assets/images/Example_of_sigmoid.png)
+![Sigmoid formula](../../../../../../assets/images/Example_of_sigmoid.PNG)
 
 {% highlight  Python%}
 #sigmoid activation

@@ -44,7 +44,7 @@ This process can be loosely visualised as a red arrow below:
 ### 1. Forward function for a hidden layer
 First, the following forward function needs to be calculated:
 
-![Forward formula](../../../../../../assets/images/Forward_formula.png)
+![Forward formula](../../../../../../assets/images/Forward_formula.PNG)
 
 This will result in the following hidden layer:
 
