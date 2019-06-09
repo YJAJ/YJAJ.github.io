@@ -332,7 +332,7 @@ def get_best_solution(problem_name):
 
 ## Results
 
-With the aforementeiond specific implementation, a greater variety of TSPs was run with the parameters of:
+With the aforementioned specific implementation, a greater variety of TSPs was run with the parameters of:
 1. Mixed initialisation strategy;
 2. Crossover strategy composed of half simple and half edge recombination; 
 3. Mutation threshold rate of 0.6; 
@@ -345,7 +345,7 @@ With the aforementeiond specific implementation, a greater variety of TSPs was r
 | Result | 433  					 | 7,548 					   | 40,914 				   | 74,936 				    | 790,994									  |
 
 I have compared some of these results with those of my classmates and the result from the Simulated Annealing approach implemented by one classmate outperformed this GA. 
-Overall, this TSP solver produced a resonable, but not the best, result for each problem.
+Overall, this TSP solver produced a reasonable, but not the best, result for each problem.
 
 ## Lessons learnt
 
