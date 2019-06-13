@@ -18,7 +18,7 @@ tags: Visual Question Answering models, VQA, models, tips, techniques
 	</script>
 </head>
 
-_To have a glimpse through VQA tasks and datasets, you can read through my previous post, ["Notes on VQA"](http://www.yjpark.me/blog/jekyll/update/2019/03/11/notes-on-vqa.html)._
+_To get a brief look at VQA tasks and datasets, you can read through my previous post, ["Notes on VQA"](http://www.yjpark.me/blog/jekyll/update/2019/03/11/notes-on-vqa.html)._
 
 The purpose of this post is to summarise trends in recent VQA models from:
 - ["Bottom-Up and Top-Down Attention for Image Captioning and Visual Question Answering" by Anderson et al. (2017)](https://arxiv.org/abs/1707.07998);
