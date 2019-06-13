@@ -1,7 +1,7 @@
 ---
 layout: post
 author: YJ Park
-title:  "Traveling Salesperson Problem with Genetic Algorithm (assignment with SQL and Python)"
+title:  "Traveling Salesperson Problem with Genetic Algorithm"
 date:   2018-10-14 13:42:59 +1000
 categories: jekyll update
 tags: Traveling Salesman Problem, TSP, Genetic Algorithm, Python, SQL

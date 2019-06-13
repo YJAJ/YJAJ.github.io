@@ -1,7 +1,7 @@
 ---
 layout: post
 author: YJ Park
-title:  "Notes on VGG (Paper title: Very deep convolutional networks for large-scale image recognition)"
+title:  "Notes on VGG"
 date:   2018-12-09 10:50:00 +1000
 categories: jekyll update
 tags: VGG, Karen Simonyan, Andrew Zisserman, 2014
@@ -19,7 +19,7 @@ tags: VGG, Karen Simonyan, Andrew Zisserman, 2014
 </head>
 
 While our small deep learning study group was playing with visualisation techniques of layers, we found that many methods were still based on VGG-like architecture. 
-This week, therefore, we decided to read through [Simonyan and Zisserman (2014)](https://arxiv.org/abs/1409.1556) to study a VGG model.
+This week, therefore, we decided to read through ["Very deep convolutional networks for large-scale image recognition" by Simonyan and Zisserman (2014)](https://arxiv.org/abs/1409.1556) to study a VGG model.
 
 Many studies around this time focused on improving hyper-parameters of Convolutional networks (ConvNets). This paper also investigated one of the most important hyper-parameter - the effect of the ConvNets depth.
 

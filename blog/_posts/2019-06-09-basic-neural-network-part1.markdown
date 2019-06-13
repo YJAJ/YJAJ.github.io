@@ -1,7 +1,7 @@
 ---
 layout: post
 author: YJ Park
-title:  "Basic neural network Part 1 - Math involved in forward and backward functions (assignment with Python)"
+title:  "Neural network Part 1 - Math"
 date:   2019-06-09 10:50:00 +1000
 categories: jekyll update
 tags: neural network, neural network mathematics, backpropagation, backpropagation mathematics

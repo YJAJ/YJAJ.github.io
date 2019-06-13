@@ -1,7 +1,7 @@
 ---
 layout: post
 author: YJ Park
-title:  "Notes on Visual Question Answering (Paper title: Visual Question Answering: Datasets, Algorithms, and Future Challenges)"
+title:  "Notes on Visual Question Answering"
 date:   2019-03-11 10:50:00 +1000
 categories: jekyll update
 tags: VQA, Kushal Kafle, Christopher Kanan, 2016
@@ -19,7 +19,7 @@ tags: VQA, Kushal Kafle, Christopher Kanan, 2016
 </head>
 
 
-The purpose of this post is to summarise trends in Visual Question Answering (VQA) from [Kafle and Kanan (2016)](https://arxiv.org/abs/1610.01465) as to:
+The purpose of this post is to summarise trends in Visual Question Answering (VQA) from ["Visual Question Answering: Datasets, Algorithms, and Future Challenges" by Kafle and Kanan (2016)](https://arxiv.org/abs/1610.01465) as to:
 
  * what datasets are available;
  * what models are used for exploring VQA; and

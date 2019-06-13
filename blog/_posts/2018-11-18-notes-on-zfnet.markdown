@@ -1,7 +1,7 @@
 ---
 layout: post
 author: YJ Park
-title:  "Notes on ZFNet (Paper title: Visualizing and Understanding Convolutional Networks)"
+title:  "Notes on ZFNet"
 date:   2018-11-18 10:50:00 +1000
 categories: jekyll update
 tags: ZFNet, Zeiler and Furgus, 2013, Matthew Zeiler, Rob Furgus, Visualization of CNN
@@ -18,7 +18,7 @@ tags: ZFNet, Zeiler and Furgus, 2013, Matthew Zeiler, Rob Furgus, Visualization 
     </script>
 </head>
 
-This post focuses on understanding [the paper](https://arxiv.org/abs/1311.2901) "Visualizing and Understanding Convolutional Networks". To explore core concepts presented in the paper, some better explanations have been adopted from [fast.ai](https://www.fast.ai/) and [Standford CS231N](http://cs231n.stanford.edu/2017/).
+This post focuses on understanding ["Visualizing and Understanding Convolutional Networks"](https://arxiv.org/abs/1311.2901) "Visualizing and Understanding Convolutional Networks". To explore core concepts presented in the paper, some better explanations have been adopted from [fast.ai](https://www.fast.ai/) and [Standford CS231N](http://cs231n.stanford.edu/2017/).
 
 This paper was interesting because the authors 1) placed efforts to visualise convolutional layers (which was a kind of a black box) and 2) used this visualisation to find better hyperparameters of the existing architecture, AlexNet. In the abstract, the motivations were articulated as identifying 'why large Convolutional Network (CNN) work well' and 'how they might be improved', so this paper focuses on the details around 'how' and 'why' through a good range of experiments.
 

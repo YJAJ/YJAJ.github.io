@@ -1,7 +1,7 @@
 ---
 layout: post
 author: YJ Park
-title:  "Basic neural network - Implementation (assignment with Python)"
+title:  "Neural network Part 2 - Implementation"
 date:   2019-06-09 10:50:00 +1000
 categories: jekyll update
 tags: neural network, vectorisation, neural network python code

@@ -1,7 +1,7 @@
 ---
 layout: post
 author: YJ Park
-title:  "Conway's Game of Life (assignment with Java)"
+title:  "Conway's Game of Life"
 date:   2018-10-09 20:01:59 +1000
 categories: jekyll update
 tags: Conway's Game of Life, Game of Life, Java

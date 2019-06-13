@@ -1,7 +1,7 @@
 ---
 layout: post
 author: YJ Park
-title:  "Notes on AlexNet (Paper title: ImageNet Classification with Deep Convolutional Neural Networks)"
+title:  "Notes on AlexNet"
 date:   2018-11-09 19:35:00 +1000
 categories: jekyll update
 tags: AlexNet, Krizhevsky et al., 2012, Krizhevsky 2012, Alex Krizhevsky, Ilya Sutskever, Geoffrey E. Hinton

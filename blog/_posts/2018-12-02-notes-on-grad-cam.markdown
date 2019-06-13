@@ -1,7 +1,7 @@
 ---
 layout: post
 author: YJ Park
-title:  "Notes on Grad-CAM (Paper title: Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization)"
+title:  "Notes on Grad-CAM"
 date:   2018-12-02 10:50:00 +1000
 categories: jekyll update
 tags: Grad-CAM, Ramprasaath R. Selvaraju, Michael Cogswell, Abhishek Das, Ramakrishna Vedantam, Devi Parikh, Dhruv Batra, Visual Explanations, 2016
@@ -19,7 +19,7 @@ tags: Grad-CAM, Ramprasaath R. Selvaraju, Michael Cogswell, Abhishek Das, Ramakr
 </head>
 
 This week, our small deep learning study group decided to focus on a visualisation of layers since both of us wanted to see how the model sees through images when doing a classification task.
-
+In particular, I read through ["Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization"](https://arxiv.org/abs/1610.02391).
 
 Computer vision tasks have been diversified into more than a labelling task, branching into 1) image classification (traditional single or multi labelling tasks); 2) object detection (localisation of an object); 3) semantic segmentation (pixel-wise localisation); 4) image captioning; and 5) visual question answering (VQA).
 
