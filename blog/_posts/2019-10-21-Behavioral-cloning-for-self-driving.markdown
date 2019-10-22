@@ -1,7 +1,7 @@
 ---
 layout: post
 author: YJ Park
-title:  "Behavioral (driving) Cloning for predicting steering wheel angles"
+title:  "Behavioral (driving) Cloning for predicting steering angles"
 date:   2019-10-21 10:50:00 +1000
 categories: jekyll update
 tags: behavioral-cloning, self-driving, darknet53, angle-prediction
@@ -17,6 +17,10 @@ tags: behavioral-cloning, self-driving, darknet53, angle-prediction
 		  gtag('config', 'UA-127453746-1');
 	</script>
 </head>
+
+# Project: Behavioral Cloning
+
+_Code is available [github Driving_behavioral_cloning_with_darknet53](https://github.com/YJAJ/Udacity_Self_Driving_Car_Engineer_Projects/tree/master/Driving_behavioral_cloning_with_darknet53)._
 
 ## Introduction
 ---
@@ -43,56 +47,6 @@ Normal track and hard track look like below:
 Normal track               |  Hard track
 :-------------------------:|:-------------------------:
 ![Normal_track](../../../../../../assets/images/Normal_track.PNG)|![Hard_track](../../../../../../assets/images/Hard_track.PNG)
-
-
-
-## Files in this project
-
-* data.py Class that loads a dataset and provides five different augmentation methods
-* model.py Collection of Darknet 53 model architecture and training pipeline methods
-* drive.py Methods to connect the trained model to predict a steering wheel angle with the simulator. Module provided by Udacity but revised to provide preprocessing of the data prior to prediction. 
-* model.h5 Trained and finetuned model weights
-* environments.yml Packages for Tensorflow GPU with other necessary packages (e.g. Numpy, Matplotlib, Pandas) for a conda environment
-
-## Quick Start
-
-### Install packages
-The following line will install packages for TensorFlow GPU and other necessary packages for data preprocessing.
-
-```
-conda env create -f environment
-```
-
-### Train a new model
-The following command will start to train a new Darknet53 for behavioral cloning.
-The arguments for this command are:
-
-* -d "Directory for a dataset", default value is 'data/data'.
-* -f "CSV file to read in for a path for images and a list of steering angles", default value is 'resampled_log.csv'.
-* -l "Learning rate", default value is 0.01.
-* -e "Number of epochs", default value is 3.
-* -b "Batch size", default value is 8.
-
-For example, you can run:
-```
-python model.py -d "data" -f "resampled_log.csv" -l 0.01 -e 3 -b 8
-```
-Please note that the model does not require many epochs to train. In fact, 3 epochs are sufficient.
-
-In addition, your file should have a column named 'image' that contains a list of path to the image files and a column named 'steering_angle' that has a list of steering wheel angles.
-
-
-### Run the model to predict steering angles
-First, you will need [Udacity simulator](https://github.com/udacity/self-driving-car-sim) to be installed.
-
-Once the simulator runs, click on the "Autonomous" button then a car will appear on a track that you selected.
-A car will not move until you will type the following command in your terminal.
-
-```
-python drive.py model.h5
-```
-
-Here model.h5 is the pre-trained model weights. If you created your own weight files from new training, you will have to change the file name accordingly (e.g. model_3.h5)
 
 ## Data
 
