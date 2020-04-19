@@ -1,10 +1,10 @@
 ---
 layout: post
 author: YJ Park
-title:  "Ride-sharing behaviours of New York City's taxi and rideshare users"
+title:  "Ride-sharing behaviors of New York City's taxi and rideshare users"
 date:   2020-04-11 07:50:00 -700
 categories: jekyll update
-tags: ride-sharing behaviours, New York City's taxi, New York City's rideshare, ride-sharing ratios
+tags: ride-sharing behaviors, New York City's taxi, New York City's rideshare, ride-sharing ratios
 ---
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -18,13 +18,21 @@ tags: ride-sharing behaviours, New York City's taxi, New York City's rideshare, 
 	</script>
 </head>
 
-# Project: Ride-sharing behaviours of New York City's taxi and rideshare users
+# Project: Ride-sharing behaviors of New York City's taxi and rideshare users
 
 ## Introduction
 ---
 
 The purpose of this sub-project is to explore sharing patters of passengers who are taking New York City's taxis and rideshares, including Green Boro taxis, Yellow Medallion taxis, Uber and Lyft. 
 
+I found that:
+1) When examining only ride areas with greater than 10,000 occurrences during rush hours, 102 data points are available. However, this number is dominated by rideshares such as Uber and Lyft (85 out of 102), not taxis. It seems that between July 2017 and July 2019, rideshares were popular during rush hours. The other interpretation can be the data for taxis may not be complete so less number of occurrences could have been recorded.
+
+2) Shared ratios for green taxis seems to be lowest, consistently between 12.81% and 21.07%. However, the interpretation here is quite difficult to make because the comparison between rideshare and two taxis is not a fair one. The only clear points here are: where there is one passenger only, these rides are not shared; and the ride-sharing ratio of yellow taxis seems to be higher than that of green taxis.
+
+3) The average shared ratios for Brooklyn seems to be higher than those of Manhattan and Queens. For rush hours, not much data is available for the shared ratios for Bronx.
+
+![map_over_10k](../../../../../../assets/images/map_over_10k.png)
 
 
 ## Import packages
@@ -53,7 +61,7 @@ import folium #folium map visualization
 ## Create dataframes from available csv files
 ---
 
-The New York City (hereafter, NYC)'s taxi and rade-share data is available here: https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+The New York City (hereafter, NYC)'s taxi and ride-share data is available here: https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 
 In my case, I had New York City's Bike, MTA, Green, Yellow and Rideshare data available. However, because of their vast amount, I decided to focus on transportation modes where a single passenger would most likely use but having a sharing capacity, hence taxis and ridesharing methods such as Uber and Lyft.
 
@@ -66,7 +74,7 @@ rideshare_df = pd.read_csv('path_to_your_datanyc_rideshare.csv')
 ```
 
 I also need to create the dataframe for the mapping between the location IDs and borough (and zone) for NYC for visualization tasks later.
-There are two datasets I use to this taks: 1) NYC's axi and Limousine Commission (TLC) zone data; and 2) NYC's geographical mapping between Neighborhood Tabulation Areas (NTA) codes and geographical coordinates.
+There are two datasets I use to this task: 1) NYC's taxi and Limousine Commission (TLC) zone data; and 2) NYC's geographical mapping between Neighborhood Tabulation Areas (NTA) codes and geographical coordinates.
 
 ```
 tlc_df = pd.read_csv('path_to_your_data/tlc_zones.csv')
@@ -104,7 +112,7 @@ The simplified dataframe of geo_df is now transferred to nta_df.
 ## Explore basic data available for taxi and rideshare information
 ---
 
-Rideshare dataframe includes pickup and dropoff location IDs. It also includes the indication of this ride was shared or not. The data is missing a lot of coordinates of these location ids. In addition, shared_ride indicates that whether this particular ride is shared and the value is boolean rather than displaying the number of passengers shared this ride.
+Rideshare dataframe includes pick-up and drop-off location IDs. It also includes the indication of this ride was shared or not. The data is missing a lot of coordinates of these location ids. In addition, shared_ride indicates that whether this particular ride is shared and the value is boolean rather than displaying the number of passengers shared this ride.
 
 ![rideshare_df_example](../../../../../../assets/images/rideshare_df_example.png)
 
@@ -133,7 +141,7 @@ filtered_rideshare_df = rideshare_df.dropna(subset=['pickup_location_id', 'dropo
 
 ![drop_na_example](../../../../../../assets/images/drop_na_example.png)
 
-When I looked at the rideshare data after dropping all NaN values, unfortuately, the shared_ride indicator is much short than other fields. Why is this the case?
+When I looked at the rideshare data after dropping all NaN values, unfortunately, the shared_ride indicator is much short than other fields. Why is this the case?
 
 ------------
 
@@ -223,7 +231,7 @@ time_filtered_nyc_green_df['shared_ride'] = filtered_nyc_green_df.apply(lambda r
 ```
 
 After creating a ride-sharing indicator, I will drop all NaN values because there are cases where the number of passenger was recorded as 0. 
-For example, 407,454 shared-ride indicators are available out of 411,437 occurences.
+For example, 407,454 shared-ride indicators are available out of 411,437 occurrences.
 
 ![example_yellow_num_shared_ride](../../../../../../assets/images/example_yellow_num_shared_ride.png)
 
@@ -244,7 +252,7 @@ After cleaning the dataframes, there are 407,454 and 184.370 data points for yel
 
 ![remaining_data](../../../../../../assets/images/remaining_data.png)
 
-Then, to make a ride-sharing ratio, make an occurence to 1 to count all occurences of the rides on rush hours by each transportation mode later.
+Then, to make a ride-sharing ratio, make an occurrence to 1 to count all occurrences of the rides on rush hours by each transportation mode later.
 
 ```
 time_filtered_nyc_yellow_df['occurence'] = 1
@@ -252,7 +260,7 @@ time_filtered_nyc_green_df['occurence'] = 1
 time_filtered_rideshare_df['occurence'] = 1
 ``` 
 
-## Explore behavioural patterns of rideshares and taxis
+## Explore behavioral patterns of rideshares and taxis
 ---
 
 First, I created the shared ride ratio values by each transport mode.
@@ -291,11 +299,11 @@ top10_yellow_df_loc = top10_yellow_df.join(tlc_df.set_index('location_id')[['bor
 top10_green_df_loc = top10_green_df.join(tlc_df.set_index('location_id')[['borough', 'zone', 'service_zone', 'nta_code']], on='pickup_location_id')
 ```
 
-For the purpose of the analysis, I look at the instances of more than 10,000 occurences of pick ups, look at the top 50 ratio of shared ride across rideshares and taxis.
-Three findings arise from looking at the ride-sharing ratio out of its occurences (i.e. how much percentage of the ride-sharing occurs during rush hours) by each transport mode.
+For the purpose of the analysis, I look at the instances of more than 10,000 occurrences of pick ups, look at the top 50 ratio of shared ride across rideshares and taxis.
+Three findings arise from looking at the ride-sharing ratio out of its occurrences (i.e. how much percentage of the ride-sharing occurs during rush hours) by each transport mode.
 
 1) When examining only ride areas with more_than_10k_occurences, 102 data points are available. However, this number is dominated by rideshares (85 out of 102), not taxis.
-It seems that between July 2017 and July 2019, rideshares were popular during rush hours. The other interpretation can be the data for taxis may not be complete so less number of occurences could have been recorded.
+It seems that between July 2017 and July 2019, rideshares were popular during rush hours. The other interpretation can be the data for taxis may not be complete so less number of occurrences could have been recorded.
 
 ![more_than_10k_occurences](../../../../../../assets/images/more_than_10k_occurences.png)
 
@@ -303,15 +311,15 @@ It seems that between July 2017 and July 2019, rideshares were popular during ru
 
 ![violin_chart_mode](../../../../../../assets/images/violin_chart_mode.png)
 
-3) The average shared ratios for Brookyn seems to be higher than those of Mahattan and Queens. For rush hours, not much data is available for the shared ratios for Bronx.
+3) The average shared ratios for Brooklyn seems to be higher than those of Manhattan and Queens. For rush hours, not much data is available for the shared ratios for Bronx.
 
 ![violin_chart_borough](../../../../../../assets/images/violin_chart_borough.png)  
 
-Let us now look at problem areas - areas that contain large occurences during rush-hours, but having a low sharing ratio. To investigate this, bottom 20 pick up areas are selected based on its ratio and plot these areas with the occurences. If the size of scatter dots are larger, the occurences of that particular pick up location are greater.
+Let us now look at problem areas - areas that contain large occurrences during rush-hours, but having a low sharing ratio. To investigate this, bottom 20 pick up areas are selected based on its ratio and plot these areas with the occurrences. If the size of scatter dots are larger, the occurrences of that particular pick up location are greater.
 
 ![bottom_20](../../../../../../assets/images/bottom_20.png)
 
-It is clear that the highest occurences locations for the worst sharing ratio encompasses: 1) TriBeCa/Civic Center, 2) Times Sq/Theatre District, 3) SoHo, 4) JFK Airport, and 5) LaGuardia Airport. During rush hours of July 2017 to July 2019, the occurences show more than 14,000 trips from these locations but the sharing ratio is around 10-18% only via rideshares.
+It is clear that the highest occurrences locations for the worst sharing ratio encompasses: 1) TriBeCa/Civic Center, 2) Times Sq/Theatre District, 3) SoHo, 4) JFK Airport, and 5) LaGuardia Airport. During rush hours of July 2017 to July 2019, the occurrences show more than 14,000 trips from these locations but the sharing ratio is around 10-18% only via rideshares.
 
 The last comparison analysis is to visualize the ride-sharing ratio by its percentage and its source. The code below is using folium map with CartoDB dark_matter to visualize the ratio with the size of circles.
 
@@ -330,7 +338,7 @@ def get_size(shared_percent):
         size = 2
     return size
 
-#using folium map, visualize apprximate longitude and attitude of tlc zones for ride occurences greater than 10,000 
+#using folium map, visualize apprximate longitude and attitude of tlc zones for ride occurrences greater than 10,000 
 nyc_map = folium.Map(location=[40.693943, -73.985880],
                         zoom_start=10,
                         tiles="CartoDB dark_matter")
@@ -368,6 +376,7 @@ With the code above, the ride sharing ratios are represented on the New York Cit
 
 
 ## Conclusion and limitation of this analysis
+---
 
 After going through the analysis, I found that rideshares may not have been used to deliver 'true' ride-sharing in certain areas during rush hours. Overall, increase in ‘true’ ride-sharing may be required to make NYC’s rides more efficient during rush hours since a large disparity from ride-sharing ratios is observed between the areas during rush hours (e.g. Lenox Hill East: 40.04% vs JFK Airport: 11.42%).
 
