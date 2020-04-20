@@ -34,6 +34,7 @@ I found that:
 
 ![map_over_10k](../../../../../../assets/images/map_over_10k.png)
 
+Overall, rideshare methods may not have been used to deliver 'true' ride-sharing in certain areas during rush hours. An increase in ‘true’ ride-sharing may be required to make NYC’s rides more efficient during rush hours since a large disparity from ride-sharing ratios is observed between the areas during rush hours (e.g. Lenox Hill East: 40.04% vs JFK Airport: 11.42%).
 
 ## Import packages
 ---
@@ -83,15 +84,15 @@ geo = pd.read_csv('path_to_your_data/geographic.csv')
 
 From TLC data, location_id, borough, zone and nta_code are available.
 
-![tlc_df](../../../../../../assets/images/tlc_df.PNG)
+![tlc_df](../../../../../../assets/images/tlc_df.png)
 
 TLC data shows there are 69 zones in Manhattan and Queens and other major zones are 61 in Brooklyn and 43 in Bronx.
 
-![tlc_df_count](../../../../../../assets/images/tlc_df_count.PNG)
+![tlc_df_count](../../../../../../assets/images/tlc_df_count.png)
 
 Geo data can provide nta codes with their boundary coordinates.
 
-![geo_df](../../../../../../assets/images/geo_df.PNG)
+![geo_df](../../../../../../assets/images/geo_df.png)
 
 
 When I join nta_code between these two dataframes, I will be able to map from location_id to boough and zone to geographical coordinates for analysis and visualization later.
@@ -380,4 +381,4 @@ With the code above, the ride sharing ratios are represented on the New York Cit
 
 After going through the analysis, I found that rideshares may not have been used to deliver 'true' ride-sharing in certain areas during rush hours. Overall, increase in ‘true’ ride-sharing may be required to make NYC’s rides more efficient during rush hours since a large disparity from ride-sharing ratios is observed between the areas during rush hours (e.g. Lenox Hill East: 40.04% vs JFK Airport: 11.42%).
 
-It is noted that ride-sharing ratio cannot be compared fairly across different transportation methods currently due to a lack of information in the datasets of Yellow taxi and Green taxi. To prepare a fair analysis for a better traffic situation in NYC, it would be helpful to record a ride-share indicator for taxis.
+It is also noted that ride-sharing ratio cannot be compared fairly across different transportation methods currently due to a lack of information in the datasets of Yellow taxi and Green taxi. To prepare a fair analysis for a better traffic situation in NYC, it would be helpful to record a ride-share indicator for taxis.
