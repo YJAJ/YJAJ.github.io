@@ -7,15 +7,7 @@ categories: jekyll update
 tags: neural network, neural network mathematics, backpropagation, backpropagation mathematics
 ---
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127453746-1"></script>
-	<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-127453746-1');
-	</script>
+    <script defer data-domain="yjpark.me" src="https://plausible.io/js/plausible.js"></script>
 </head>
 
 This is Part 1 of the two series of basic neural network posts, covering explanations of mathematics involved, in particular how backpropagation works with one hidden layer and one output layer.

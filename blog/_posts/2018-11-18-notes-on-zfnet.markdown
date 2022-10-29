@@ -7,15 +7,7 @@ categories: jekyll update
 tags: ZFNet, Zeiler and Furgus, 2013, Matthew Zeiler, Rob Furgus, Visualization of CNN
 ---
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127453746-1"></script>
-    <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-127453746-1');
-    </script>
+    <script defer data-domain="yjpark.me" src="https://plausible.io/js/plausible.js"></script>
 </head>
 
 This post focuses on understanding ["Visualizing and Understanding Convolutional Networks"](https://arxiv.org/abs/1311.2901) "Visualizing and Understanding Convolutional Networks". To explore core concepts presented in the paper, some better explanations have been adopted from [fast.ai](https://www.fast.ai/) and [Standford CS231N](http://cs231n.stanford.edu/2017/).

@@ -7,15 +7,7 @@ categories: jekyll update
 tags: neural network, vectorisation, neural network python code
 ---
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127453746-1"></script>
-	<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-127453746-1');
-	</script>
+    <script defer data-domain="yjpark.me" src="https://plausible.io/js/plausible.js"></script>
 </head>
 
 In this post, I will go through how a basic neural network with one hidden layer can be implemented with its vectorisation.

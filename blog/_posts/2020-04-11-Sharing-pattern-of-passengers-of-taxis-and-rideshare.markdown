@@ -7,15 +7,7 @@ categories: jekyll update
 tags: ride-sharing behaviors, New York City's taxi, New York City's rideshare, ride-sharing ratios
 ---
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127453746-1"></script>
-	<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-127453746-1');
-	</script>
+    <script defer data-domain="yjpark.me" src="https://plausible.io/js/plausible.js"></script>
 </head>
 
 # Project: Ride-sharing behaviors of New York City's taxi and rideshare users

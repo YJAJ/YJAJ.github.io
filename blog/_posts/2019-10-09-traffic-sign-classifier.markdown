@@ -7,15 +7,7 @@ categories: jekyll update
 tags: Traffic sign classification, Classify traffic signs, Resnet, SEnet
 ---
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127453746-1"></script>
-	<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-127453746-1');
-	</script>
+    <script defer data-domain="yjpark.me" src="https://plausible.io/js/plausible.js"></script>
 </head>
 
 # Traffic Sign Classifier with Resnet-like and Squeeze-and-Excitation-like blocks

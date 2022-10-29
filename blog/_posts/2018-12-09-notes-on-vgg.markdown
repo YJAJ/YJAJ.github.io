@@ -7,15 +7,7 @@ categories: jekyll update
 tags: VGG, Karen Simonyan, Andrew Zisserman, 2014
 ---
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127453746-1"></script>
-	<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-127453746-1');
-	</script>
+    <script defer data-domain="yjpark.me" src="https://plausible.io/js/plausible.js"></script>
 </head>
 
 While our small deep learning study group was playing with visualisation techniques of layers, we found that many methods were still based on VGG-like architecture. 

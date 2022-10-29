@@ -7,15 +7,7 @@ categories: jekyll update
 tags: Visual Question Answering models, VQA, models, tips, techniques
 ---
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127453746-1"></script>
-	<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-127453746-1');
-	</script>
+    <script defer data-domain="yjpark.me" src="https://plausible.io/js/plausible.js"></script>
 </head>
 
 _To get a brief look at VQA tasks and datasets, you can read through my previous post, ["Notes on VQA"](http://www.yjpark.me/blog/jekyll/update/2019/03/11/notes-on-vqa.html)._
